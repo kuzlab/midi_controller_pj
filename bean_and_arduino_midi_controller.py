@@ -33,6 +33,7 @@ data = ['','','']
 
 prebeanval = 0.0
 
+
 while (1):
     result=usbser.read(usbser.inWaiting())
     if result != '':
@@ -68,7 +69,6 @@ while (1):
                 for i in range(len(data)):
                     data[i] = int(data[i])
 #                print data
-#                senddata = [0xB0,1,int((data[0] + 256)/4)]
                 temp = abs(data[0]) * 128/256
                 if temp > 127:
                     temp = 127
