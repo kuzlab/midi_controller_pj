@@ -1,9 +1,6 @@
 #ifndef _ASSIGN_MAP_H_
 #define _ASSIGN_MAP_H_
 
-#define DSW_NUM 14
-#define ASW_NUM 6
-
 //#define PIN_SW0 2
 #define PIN_SW0 0
 #define PIN_SW1 1
@@ -16,10 +13,10 @@
 #define PIN_SW8 8
 #define PIN_SW9 9
 
-#define PIN_MSW0_0 10
-#define PIN_MSW0_1 11
-#define PIN_MSW1_0 12
-#define PIN_MSW1_1 13
+#define PIN_MSW0-0 10
+#define PIN_MSW0-1 11
+#define PIN_MSW1-0 12
+#define PIN_MSW1-1 13
 
 #define PIN_AD0 A0
 #define PIN_AD1 A1
@@ -36,13 +33,7 @@
 #define AD_MAX 1024
 double AD_DIV = (double)AD_MAX/128;
 
-const char dpins[DSW_NUM] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5
-                            , PIN_SW6, PIN_SW7, PIN_SW8, PIN_SW9, PIN_MSW0_0, PIN_MSW0_1
-                            , PIN_MSW1_0, PIN_MSW1_1 };
-
-//const char apins[ASW_NUM] = { PIN_AD0, PIN_AD1, PIN_AD2, PIN_AD3, PIN_AD4, PIN_AD5 };
-const char apins[ASW_NUM] = { A0, A1, A2, A3, A4, A5 };
-
+const char pins[6] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5};
 
 #define MIDI_0_0 0xb0
 #define MIDI_0_1 0x00
