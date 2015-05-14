@@ -20,7 +20,14 @@
 #define PIN_MSW0_1 11
 #define PIN_MSW1_0 12
 #define PIN_MSW1_1 13
-
+/*
+#define PIN_AD0 "A0"
+#define PIN_AD1 "A1"
+#define PIN_AD2 "A2"
+#define PIN_AD3 "A3"
+#define PIN_AD4 "A4"
+#define PIN_AD5 "A5"
+*/
 #define PIN_AD0 A0
 #define PIN_AD1 A1
 #define PIN_AD2 A2
@@ -33,16 +40,16 @@
 
 //unsigned int AD_MAX = (unsigned int)((double)1024 * MAX_RES / (MAX_RES + PULLUP_RES));
 //#define AD_MAX 564
-#define AD_MAX 1024
-double AD_DIV = (double)AD_MAX/128;
+#define AD_MAX 1023
+double AD_DIV = (double)AD_MAX/127l;
 
+/*
 const char dpins[DSW_NUM] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5
                             , PIN_SW6, PIN_SW7, PIN_SW8, PIN_SW9, PIN_MSW0_0, PIN_MSW0_1
                             , PIN_MSW1_0, PIN_MSW1_1 };
 
-//const char apins[ASW_NUM] = { PIN_AD0, PIN_AD1, PIN_AD2, PIN_AD3, PIN_AD4, PIN_AD5 };
-const char apins[ASW_NUM] = { A0, A1, A2, A3, A4, A5 };
-
+const char apins[ASW_NUM] = { PIN_AD0, PIN_AD1, PIN_AD2, PIN_AD3, PIN_AD4, PIN_AD5 };
+*/
 
 #define MIDI_0_0 0xb0
 #define MIDI_0_1 0x00

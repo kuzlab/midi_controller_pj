@@ -50,7 +50,8 @@ if USB_SERIAL:
         USB_SERIAL = 1
     
 
-com = Command("ls /tmp |grep tty | grep LightBlue-Bean").run()
+#com = Command("ls /tmp |grep tty | grep LightBlue-Bean").run()
+com = Command("ls /dev |grep cu | grep LightBlue-Bean").run()
 #print com.output
 
 if com.output == '':
