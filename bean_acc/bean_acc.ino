@@ -7,7 +7,7 @@
 #define DECREASING_SLOPE 700
 #define MAX_ADDUP 3000
 
-#define MIDI_1ST_BYTE 0xB7
+#define MIDI_1ST_BYTE 0xB5
 #define MIDI_2ND_BYTE 0x00
 
 #define LOOP_DELAY 1
