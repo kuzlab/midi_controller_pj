@@ -54,14 +54,25 @@ if USB_SERIAL:
 com = Command("ls /dev |grep cu | grep LightBlue-Bean").run()
 #print com.output
 
-if com.output == '':
-    BEAN_SERIAL = 0
-else:
-    BEAN_SERIAL = 1
-#    beanport = '/tmp/tty.LightBlue-Bean'
-#    beanport = '/tmp/cu.LightBlue-Bean'
-    beanport = '/dev/cu.LightBlue-Bean'
-    beanser = serial.Serial(beanport, 57600, timeout=1)
+BEAN_SERIAL = 1
+
+if BEAN_SERIAL: 
+    if com.output == '':
+        com = Command("ls /tmp |grep cu | grep LightBlue-Bean").run()
+        if com.output == '':
+            BEAN_SERIAL = 0
+        else:
+            BEAN_SERIAL = 1
+            beanport = '/tmp/cu.LightBlue-Bean'
+            print "connect with Bean"
+            beanser = serial.Serial(beanport, 57600, timeout=1)
+    else:
+        BEAN_SERIAL = 1
+    #    beanport = '/tmp/tty.LightBlue-Bean'
+        beanport = '/dev/cu.LightBlue-Bean'
+        print "connect with Bean"
+        beanser = serial.Serial(beanport, 57600, timeout=1)
+
 
 if USB_SERIAL > 0:
     usbser1 = serial.Serial(usbport1, 57600, timeout=1)

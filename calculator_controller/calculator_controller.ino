@@ -48,7 +48,7 @@ int8_t keymap[5*4] =
 #define THD 800
 
 void print_inpins_all(){
-  for(int i=0;i<4;i++){
+  for(int i=0;i<5;i++){
 //    Serial.print(digitalRead(inpins[i]));
 //    Serial.print(' ');
 //    Serial.print(analogRead(inpins[i]));
@@ -194,11 +194,9 @@ int return_keynum_if_pressed(){
   int8_t temp;
   for(uint8_t i=0;i<4;i++){
     set_one_pin_high_other_pins_low(outpins[i]);
+    temp = return_pressed_button_number();
     #ifdef _DEBUG_
       print_inpins_all();
-    #endif
-    temp = return_pressed_button_number();
-    #ifdef _DEBUG_    
       Serial.print("pressed [");
       Serial.print(i);
       Serial.print(" , ");
@@ -213,7 +211,7 @@ int return_keynum_if_pressed(){
       }
     }
     #ifdef _DEBUG_
-      Serial.println("------------------------------------------------------------------------------------");
+//      Serial.println("------------------------------------------------------------------------------------");
       Serial.print("switch_state = {");
       for(uint8_t i=0;i<20;i++){
         Serial.print(switch_state[i]);

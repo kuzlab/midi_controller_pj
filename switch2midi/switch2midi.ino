@@ -14,9 +14,12 @@ uint16_t ad_value[ASW_NUM] = {0, 0, 0, 0, 0, 0};
 #define LOOP_DELAY 50
 #define SEND_MIDI_DELAY 100
 
-const char dpins[DSW_NUM] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5
+/*const char dpins[DSW_NUM] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5
                             , PIN_SW6, PIN_SW7, PIN_SW8, PIN_SW9, PIN_MSW0_0, PIN_MSW0_1
-                            , PIN_MSW1_0, PIN_MSW1_1 };
+                            , PIN_MSW1_0, PIN_MSW1_1 };*/
+uint8_t dpins[DSW_NUM] = {PIN_SW0, PIN_SW1, PIN_SW2, PIN_SW3, PIN_SW4, PIN_SW5
+                            , PIN_SW6, PIN_SW7, PIN_SW8, PIN_SW9, PIN_MSW0_0, PIN_MSW0_1
+                            , PIN_MSW1_0, PIN_MSW1_1 };                            
 const char apins[ASW_NUM] = { PIN_AD0, PIN_AD1, PIN_AD2, PIN_AD3, PIN_AD4, PIN_AD5 };
 
 void setup()
@@ -98,6 +101,13 @@ void loop()
     }    
     switch_state[i] = temp[i];
   }
+  #if DEBUG
+  for(int i = 0; i < DSW_NUM; i++){
+    Serial.print(switch_state[i]);
+    Serial.print(",");
+  }
+  Serial.println(' ');
+  #endif
   delay(LOOP_DELAY);
   
 }
